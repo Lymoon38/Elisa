@@ -1,7 +1,7 @@
 /* ==========================================
    ELISA — Fonction serveur (Vercel)
    Relaie les messages vers l'API Claude
-   en gardant la clé API secrète.
+   en gardant la clé API secrète.à voir
 ========================================== */
 
 export default async function handler(req, res) {

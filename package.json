@@ -1,0 +1,6 @@
+{
+  "name": "elisa-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elisa — Assistant IA vocal, connecté à Claude via une fonction Vercel."
+}

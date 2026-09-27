@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#07111f">
+
+    <title>Elisa — Assistant IA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <!-- ================================
+         EN-TÊTE
+    ================================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                E
+            </div>
+
+            <div class="brand-name">
+                <h1>Elisa</h1>
+                <span>Assistant IA</span>
+            </div>
+
+        </div>
+
+        <button
+            id="settingsButton"
+            class="settings-button"
+            type="button"
+            aria-label="Paramètres"
+        >
+            ⚙️
+        </button>
+
+    </header>
+
+
+    <!-- ================================
+         CONVERSATION
+    ================================= -->
+
+    <section
+        id="conversation"
+        class="conversation"
+    >
+
+        <div
+            id="welcome"
+            class="welcome"
+        >
+
+            <div class="big-avatar">
+                E
+            </div>
+
+            <h2>
+                Bonjour 👋
+            </h2>
+
+            <p>
+                Je suis <strong>Elisa</strong>.
+            </p>
+
+            <p class="welcome-info">
+                Nous allons d'abord vérifier mon
+                microphone et ma voix.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         ÉTAT
+    ================================= -->
+
+    <div class="status">
+
+        <span
+            id="statusDot"
+            class="status-dot"
+        ></span>
+
+        <span id="statusText">
+            Système prêt
+        </span>
+
+    </div>
+
+
+    <!-- ================================
+         VISUALISATION MICRO
+    ================================= -->
+
+    <div class="audio-meter">
+
+        <div class="meter-label">
+            Niveau microphone
+        </div>
+
+        <div class="meter">
+
+            <div
+                id="meterLevel"
+                class="meter-level"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         MICRO PRINCIPAL
+    ================================= -->
+
+    <section class="voice-area">
+
+        <button
+            id="microButton"
+            class="micro-button"
+            type="button"
+            aria-label="Activer le microphone"
+        >
+
+            <span class="micro-icon">
+                🎤
+            </span>
+
+        </button>
+
+        <p
+            id="microLabel"
+            class="micro-label"
+        >
+            Appuyer pour parler
+        </p>
+
+    </section>
+
+
+    <!-- ================================
+         BOUTONS DE TEST
+    ================================= -->
+
+    <section class="tests">
+
+        <button
+            id="microTestButton"
+            class="test-button"
+            type="button"
+        >
+            🎤 Tester le microphone
+        </button>
+
+        <button
+            id="voiceTestButton"
+            class="test-button"
+            type="button"
+        >
+            🔊 Faire parler Elisa
+        </button>
+
+        <button
+            id="recognitionTestButton"
+            class="test-button"
+            type="button"
+        >
+            🗣️ Tester la reconnaissance
+        </button>
+
+    </section>
+
+
+    <!-- ================================
+         SAISIE TEXTE
+    ================================= -->
+
+    <section
+        id="textArea"
+        class="text-area"
+    >
+
+        <input
+            id="messageInput"
+            type="text"
+            placeholder="Écris à Elisa..."
+            autocomplete="off"
+            enterkeyhint="send"
+        >
+
+        <button
+            id="sendButton"
+            type="button"
+        >
+            ➤
+        </button>
+
+    </section>
+
+
+    <!-- ================================
+         NAVIGATION
+    ================================= -->
+
+    <nav class="bottom-bar">
+
+        <button
+            id="keyboardButton"
+            type="button"
+        >
+            <span>⌨️</span>
+            <small>Écrire</small>
+        </button>
+
+        <button
+            id="diagnosticButton"
+            type="button"
+        >
+            <span>🧪</span>
+            <small>Diagnostic</small>
+        </button>
+
+        <button
+            id="historyButton"
+            type="button"
+        >
+            <span>💬</span>
+            <small>Conversation</small>
+        </button>
+
+    </nav>
+
+
+    <!-- ================================
+         FENÊTRE DIAGNOSTIC
+    ================================= -->
+
+    <div
+        id="diagnosticModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeDiagnostic"
+                class="close-button"
+                type="button"
+            >
+                ×
+            </button>
+
+            <h2>
+                🧪 Diagnostic Elisa
+            </h2>
+
+            <div class="diagnostic-item">
+
+                <span>
+                    Microphone Windows
+                </span>
+
+                <strong id="diagnosticMicro">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="diagnostic-item">
+
+                <span>
+                    Accès navigateur
+                </span>
+
+                <strong id="diagnosticAccess">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="diagnostic-item">
+
+                <span>
+                    Reconnaissance vocale
+                </span>
+
+                <strong id="diagnosticRecognition">
+                    —
+                </strong>
+
+            </div>
+
+            <div class="diagnostic-item">
+
+                <span>
+                    Synthèse vocale
+                </span>
+
+                <strong id="diagnosticSpeech">
+                    —
+                </strong>
+
+            </div>
+
+            <div
+                id="diagnosticMessage"
+                class="diagnostic-message"
+            >
+                Lance un test pour obtenir un résultat.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</main>
+
+</body>
+</html>

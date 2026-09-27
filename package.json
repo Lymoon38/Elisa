@@ -2,5 +2,6 @@
   "name": "elisa-assistant",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Elisa — Assistant IA vocal, connecté à Claude via une fonction Vercel."
 }
